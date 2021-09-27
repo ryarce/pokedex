@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <p>Platzi-Store-Contacto</p>
+    </mat-toolbar-row>
+    <mat-toolbar-row>
+        <div class="formulario">
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Email Contacto</mat-label>
+                        <input matInput type="email" [formControl]="emailField" placeholder="Ex. pat@example.com">
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <button mat-raised-button [disabled]="!(emailField.valid && emailField.dirty)" (click)="sendEmail()">enviar</button>
+                </div>
+            </div>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>

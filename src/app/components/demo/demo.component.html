@@ -1,0 +1,10 @@
+<p>demo works!</p>
+<input type="text" [(ngModel)]="title">
+<input type="text" [(ngModel)]="number">
+<br>
+{{title}}
+{{ number | exponential }}
+
+<div *ngIf="title === 'Roy'">
+  este es un div
+</div>

@@ -1,0 +1,49 @@
+<form [formGroup]="registerForm" novalidate (ngSubmit)="EnviarUsuario($event)">
+    <mat-card class="shipping-card">
+      <mat-card-header>
+        <mat-card-title>Crear usuario</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <div class="col-xs-12">
+            <mat-form-field class="reg-field">
+              <input matInput placeholder="Email" formControlName="email">
+              <mat-error *ngIf="registerForm.controls['email'].hasError('required')">
+                *Email es <strong>requerido</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <mat-form-field class="reg-field">
+              <input matInput type="password" placeholder="Password" formControlName="password">
+              <mat-error *ngIf="registerForm.controls['password'].hasError('required')">
+                *Contrasena es <strong>requerido</strong>
+              </mat-error>
+              <mat-error *ngIf="registerForm.controls['password'].hasError('contrasenaInvalid')">
+                *La contrasena debe tener mínimo 8 caracteres, contener mayúsculas, minúsculas y un caracter especial !@#$%^&*
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <mat-form-field class="reg-field">
+              <input matInput type="password" placeholder="Confirm password" formControlName="confirmPassword">
+              <mat-error *ngIf="registerForm.controls['confirmPassword'].hasError('required')">
+                *Contrasena es <strong>requerido</strong>
+              </mat-error>
+              <mat-error *ngIf="registerForm.controls['confirmPassword'].hasError('NoPassswordMatch')">
+                *Las contraseñas no coinciden
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit">Registrar</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+  
