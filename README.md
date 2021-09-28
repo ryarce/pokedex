@@ -15,4 +15,5 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## References
 
-Pokeapi: https://pokeapi.co/
+*Pokeapi: https://pokeapi.co/
+*Angular Material: https://material.angular.io/ 

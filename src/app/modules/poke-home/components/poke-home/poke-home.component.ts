@@ -25,7 +25,6 @@ export class PokeHomeComponent implements OnInit {
   pageEvent: PageEvent | any;
  
   ngOnInit(): void {
-    debugger;
     this.fetchPokemon(0);
   }
 
