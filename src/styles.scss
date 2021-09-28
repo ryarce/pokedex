@@ -20,7 +20,7 @@ body{
 @media (min-width: 576px){
     .product-grid{
         display: grid;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(1,1fr);
         grid-gap: 50px 20px;
     }
     .container{
@@ -29,5 +29,12 @@ body{
         padding-left: 16px;
     }
 }
+
+.paginator{
+    color: #ff4081;
+    font-size: medium;
+    font-weight: bold;
+}
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

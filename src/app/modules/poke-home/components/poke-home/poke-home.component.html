@@ -1,0 +1,21 @@
+
+    <div *ngIf="pokemonList">
+        <mat-paginator class="paginator" [length]="length" [pageSize]="pageSize" (page)="fetchPokemon($event.pageIndex)"
+        aria-label="Select page">
+        </mat-paginator>
+        <div class="product-grid">
+            <div class="list" *ngFor="let pokemon of pokemonList.results; let i = index;">
+                <mat-card>
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <h3><b>{{i+offset+1}}. {{pokemon.name | uppercase}}</b></h3>
+                        </div>
+                        <div class="col-xs-7">
+                            <app-pokemon [pokemonId]="i+offset+1">
+                            </app-pokemon>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+    </div>

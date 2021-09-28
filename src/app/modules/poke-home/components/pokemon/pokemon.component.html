@@ -1,0 +1,35 @@
+<mat-card>
+    <div class="row">
+        <button (click)="getPokemonDatails(pokemonId)" mat-raised-button color="primary">Show pokemon</button>
+    </div>
+    <div class="row"><span><br></span></div>
+    <div class="container" *ngIf="pokemon">
+        <div class="row">
+            <div class="crop-image">
+                <img [src]="pokemon.sprites.front_default">
+            </div>
+            <mat-card-header>
+                <mat-card-subtitle><b>Types: </b>{{ pokemon.types | pokemonTypes }}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="container">
+                    <label><b>Description:</b></label>
+                    <p>Height: {{pokemon.height}}</p>
+                    <p>Weight: {{pokemon.weight}}</p>
+                </div>
+            </mat-card-content>
+        </div>
+        <div class="row">
+            <mat-card-actions>
+                <button mat-stroked-button (click)="getPokemonEvolution(pokemon.name)">Evolution</button>
+            </mat-card-actions>
+        </div>
+        <div class="row" *ngIf="evolution">
+            <mat-card-content>
+                <div class="container">
+                    <label><b>Evolves to: </b>{{evolution | uppercase}}</label>
+                </div>
+            </mat-card-content>
+        </div>
+    </div>
+</mat-card>
